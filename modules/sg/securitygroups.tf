@@ -46,6 +46,14 @@ resource "aws_security_group" "websg" {
       security_groups   = [aws_security_group.albsg.id]
     }
 
+    ingress {
+      description       = "Allow HTTP traffic from application LB only"
+      from_port         = 3000
+      to_port           = 3000
+      protocol          = "TCP"
+      security_groups   = [aws_security_group.albsg.id]
+    }
+
     egress {
     from_port   = 0
     to_port     = 0
