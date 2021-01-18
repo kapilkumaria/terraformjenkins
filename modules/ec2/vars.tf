@@ -64,7 +64,7 @@ variable "instance-db-tags" {
 
 
 variable "script" {
-    default = ["webserver-script-images.sh", "webserver-script-logfiles.sh"]
+    default = "webserver-script.sh"
 }
 
 #########################################################################################

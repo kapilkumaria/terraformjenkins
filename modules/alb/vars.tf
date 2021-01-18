@@ -6,13 +6,13 @@ variable "alb-tag" {
 
 # Target Group 1 Tag
 variable "tg1-tag" {
-    default = "kapil-logfiles-tg"
+    default = "kapil-tg"
 }
 
-# Target Group 2 Tag
-variable "tg2-tag" {
-    default = "kapil-images-tg"
-}
+# # Target Group 2 Tag
+# variable "tg2-tag" {
+#     default = "kapil-images-tg"
+# }
 
 
 

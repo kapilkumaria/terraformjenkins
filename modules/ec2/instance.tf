@@ -17,7 +17,7 @@ resource "aws_instance" "web" {
   count                     = length(var.instance-web-tags)
   ami                       = lookup(var.ami, var.region)
   instance_type             = var.instance-type-web
-  user_data                 = file(element(var.script, count.index))
+  user_data                 = file(var.script)
   subnet_id                 = element(var.public-subnets, count.index)
   vpc_security_group_ids    = [var.sgforweb]
   key_name                  = var.key-name
