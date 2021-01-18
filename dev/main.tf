@@ -81,5 +81,5 @@ module "my_alb" {
    instanceattachment2_id  = module.ec2.web_1b_id
    alb-tag                 = var.alb-tag
    tg1-tag                 = var.tg1-tag
-   tg2-tag                 = var.tg2-tag
+#   tg2-tag                 = var.tg2-tag
 }
