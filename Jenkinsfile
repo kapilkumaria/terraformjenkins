@@ -21,9 +21,7 @@ pipeline{
             sh "pwd"
           }
           sh "pwd"
-          } 
-            steps{
-               sh 'terraform init'
+          sh 'terraform init'
             }
             
         }
@@ -39,11 +37,9 @@ pipeline{
              sh "pwd"
             }
             sh "pwd"
-            } 
-            steps{
-                sh "echo 'This is my aws access key $AWS_ACCESS_KEY_ID'"
-                sh 'terraform apply -auto-approve'    
-                }
+            sh "echo 'This is my aws access key $AWS_ACCESS_KEY_ID'"
+            sh 'terraform apply -auto-approve'    
+            }
                   
         }
         
