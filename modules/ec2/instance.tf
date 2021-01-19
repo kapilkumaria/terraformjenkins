@@ -1,6 +1,7 @@
 
 
 resource "aws_instance" "bastion" {
+    count                   = var.env == "prod" ? 1 : 0
     ami                     = var.ami-id-bastion
     instance_type           = var.instance-type-bastion
     subnet_id               = var.public-1a
@@ -29,7 +30,8 @@ resource "aws_instance" "web" {
 
 
 resource "aws_instance" "db" {
-  count                     = length(var.instance-db-tags)
+  count                     = var.env == "prod" ? 1 : 0
+  #count                     = length(var.instance-db-tags)
   ami                       = lookup(var.ami, var.region)
   instance_type             = var.instance-type-db
   subnet_id                 = element(var.private-subnets, count.index)

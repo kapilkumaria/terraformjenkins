@@ -1,4 +1,8 @@
 
+variable "env" {
+    default = "dev"
+}
+
 ########################### AMI IDs for EC2 Instances (Bastion, Web and DB Servers) #############################
 #AMI ID for Bastion/Jump-Box Server
 variable "ami-id-bastion" {
