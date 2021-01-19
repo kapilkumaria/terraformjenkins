@@ -13,7 +13,6 @@ pipeline{
         }
          stage('Terraform init'){
             steps{
-               sh 'cd /home/ubuntu/jenkins/terraformjenkins/dev'
                sh 'terraform init'
             }
             
@@ -25,7 +24,6 @@ pipeline{
                 AWS_SESSION_TOKEN = credentials('KAPIL_SESSION_TOKEN')
             }
             steps{
-                sh 'cd /home/ubuntu/jenkins/terraformjenkins/dev'
                 sh "echo 'This is my aws access key $AWS_ACCESS_KEY_ID'"
                 sh 'terraform apply -auto-approve'    
                 }
