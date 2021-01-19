@@ -19,8 +19,9 @@ pipeline{
             sh "pwd"
             dir('dev'){
             sh "pwd"
+            sh 'terraform init'
           }
-          sh 'terraform init'
+          
             }
             
         }
@@ -34,12 +35,12 @@ pipeline{
              sh "pwd"
              dir('dev'){
              sh "pwd"
-            }
-            sh "echo 'This is my aws access key $AWS_ACCESS_KEY_ID'"
-            sh 'terraform apply -auto-approve'    
+             sh "echo 'This is my aws access key $AWS_ACCESS_KEY_ID'"
+             sh 'terraform apply -auto-approve'    
             }
                   
         }
         
     }
+}
 }
