@@ -4,23 +4,7 @@ pipeline{
        terraform 'terraform'
     }
     
-    stage('Terraform destroy'){
-          steps {
-            sh "pwd"
-            dir('dev'){
-            sh "pwd"
-            sh 'terraform destroy'
-          }
-          
-            }
-            
-        }
-
-
-
-
-
-
+    
     stages{
         
          stage('Git Checkout'){
