@@ -4,6 +4,23 @@ pipeline{
        terraform 'terraform'
     }
     
+    stage('Terraform destroy'){
+          steps {
+            sh "pwd"
+            dir('dev'){
+            sh "pwd"
+            sh 'terraform destroy'
+          }
+          
+            }
+            
+        }
+
+
+
+
+
+
     stages{
         
          stage('Git Checkout'){
@@ -36,7 +53,7 @@ pipeline{
              dir('dev'){
              sh "pwd"
              sh "echo 'This is my aws access key $AWS_ACCESS_KEY_ID'"
-             sh 'terraform apply -auto-approve'    
+             sh 'terraform destroy -auto-approve'    
             }
                   
         }
