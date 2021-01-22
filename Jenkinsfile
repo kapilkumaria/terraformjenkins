@@ -26,7 +26,7 @@ pipeline{
             }
             
         }
-         stage('Terraform destroy'){
+         stage('Terraform approve'){
             environment {
                 AWS_ACCESS_KEY_ID = credentials('KAPIL_ACCESS_KEY')
                 AWS_SECRET_ACCESS_KEY = credentials('KAPIL_SECRET_KEY')
@@ -37,7 +37,8 @@ pipeline{
              dir('dev'){
              sh "pwd"
              sh "echo 'This is my aws access key $AWS_ACCESS_KEY_ID'"
-             sh 'terraform destroy -auto-approve'    
+             sh 'terraform approve -auto-approve'    
+             sh 'terraform destroy'
             }
                   
         }
