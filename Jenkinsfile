@@ -37,7 +37,8 @@ pipeline{
              dir('dev'){
              sh "pwd"
              sh "echo 'This is my aws access key $AWS_ACCESS_KEY_ID'"
-             sh 'terraform destroy -auto-approve'    
+             input "Continue?"
+             sh 'terraform apply -auto-approve'    
              
             }
                   
